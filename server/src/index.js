@@ -76,7 +76,7 @@ async function startServer() {
           try {
             const decoded = jwt.verify(token, JWT_SECRET);
             currentUser = db.users.findById(decoded.userId);
-          } catch (_) {}
+          } catch (_) { }
         }
 
         return {
@@ -140,6 +140,9 @@ async function startServer() {
       },
     })
   );
+
+  // ── Root route endpoint ─────────────────────────────
+  app.get("/", (req, res) => res.send("GraphQL API Server is running!"));
 
   // ── 8. Health check endpoint ──────────────────────────
   // Apollo Server automatically exposes:
