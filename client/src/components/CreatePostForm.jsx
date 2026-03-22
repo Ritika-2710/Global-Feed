@@ -5,6 +5,7 @@ import { GET_POSTS } from "../graphql/queries";
 
 export default function CreatePostForm() {
   const [title, setTitle] = useState("");
+  console.log("title called !!")
   const [body, setBody] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
 
